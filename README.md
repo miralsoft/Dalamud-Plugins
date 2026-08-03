@@ -1,59 +1,50 @@
-# Plugins von miralsoft für FFXIV
+# FFXIV Plugins by miralsoft
 
-Alle meine Dalamud-Plugins über **eine** Adresse. Einmal eintragen, danach erscheinen hier auch alle
-künftigen Plugins von selbst.
+All of my Dalamud plugins from **one** address. Add it once, and every plugin I release from then on
+shows up here on its own.
 
-> *English: one Dalamud repository for all of my FFXIV plugins. Add the address below once — new
-> plugins show up automatically. Plugin descriptions inside the game are available in English too.*
-
-## Einrichten
+## Setup
 
 ```
 https://xivarsenal.app/plugin.json
 ```
 
-1. Im Spiel `/xlsettings` öffnen → Reiter **Experimentell**.
-2. Unter *Custom Plugin Repositories* die Adresse oben einfügen.
-3. Auf **+** klicken, dann **Save**.
-4. `/xlplugins` öffnen und das gewünschte Plugin suchen.
-5. Installieren — fertig.
+1. In game, open `/xlsettings` → the **Experimental** tab.
+2. Under *Custom Plugin Repositories*, paste the address above.
+3. Click **+**, then **Save**.
+4. Open `/xlplugins` and search for the plugin you want.
+5. Install it — that's it.
 
-> Dalamud ist ein Drittanbieter-Werkzeug und kein offizielles Square-Enix-Produkt. Die Nutzung
-> erfolgt freiwillig und auf eigene Verantwortung.
+> Dalamud is a third-party tool and not an official Square Enix product. Using it is entirely your
+> own choice and your own responsibility.
 
 ---
 
-## Die Plugins
+## The Plugins
 
 ### Eorzea Arsenal
 
-**Verbindet dein Spiel mit deinem Eorzea-Arsenal-Konto und zeigt dir, was dir zu deinem BiS noch
-fehlt.**
+**Connects your game to your Eorzea Arsenal account and shows you what you are still missing for
+your BiS.**
 
-Das Plugin liest deine Gearsets über alle Jobs hinweg und überträgt sie in dein Konto, damit die
-Webseite deine Ausrüstung gegen dein BiS stellen kann. Dazu:
+The plugin reads your gearsets across every job and sends them to your account, so the website can
+put your current gear side by side with your BiS. On top of that:
 
-- **Gear vs. BiS** — direkt im Spiel sehen, welche Teile noch fehlen, inklusive der Steine, Bücher
-  und Upgrade-Materialien, die dafür nötig sind.
-- **Kaufberater** — was du als Nächstes holen solltest, wo es herkommt und was es kostet.
-- **Wochenaufgaben** — Unreal, Wundersame Tasche und die wöchentlichen Läufe im Blick behalten.
-- **Teams** — Kalender, Mitigationspläne, Loot und Erinnerungen für deine Statik.
-- **Inventar** (freiwillig) — Materialien und Ausrüstung aus Taschen, Gehilfen und Satteltasche, damit
-  „habe ich schon" auch wirklich stimmt.
-- Zweisprachig Deutsch/Englisch. Alle Übertragungen sind ausdrücklich freiwillig.
+- **Gear vs. BiS** — see right in the game which pieces are still missing, including the tomestones,
+  books and upgrade materials they take.
+- **Shopping guide** — what to pick up next, where it comes from and what it costs.
+- **Weekly tasks** — keep Unreal, Wondrous Tails and your weekly runs in view.
+- **Teams** — calendar, mitigation plans, loot and reminders for your static.
+- **Inventory** (optional) — materials and gear from your bags, retainers and saddlebag, so that
+  "I already have that one" is actually true.
+- Bilingual English/German. Every upload is strictly opt-in.
 
-→ **[Zum Plugin: miralsoft/Dalamud-Eorzea-Arsenal](https://github.com/miralsoft/Dalamud-Eorzea-Arsenal)**
-· [Webseite](https://xivarsenal.app)
+→ **[Go to the plugin: miralsoft/Dalamud-Eorzea-Arsenal](https://github.com/miralsoft/Dalamud-Eorzea-Arsenal)**
+· [Website](https://xivarsenal.app)
 
 ---
 
-## Probleme oder Wünsche?
+## Problems or requests?
 
-Melde dich am besten direkt beim jeweiligen Plugin — bei Eorzea Arsenal geht das sogar aus dem Spiel
-heraus über die Schaltfläche mit dem Käfer in der Titelleiste jedes Fensters.
-
-## Für Entwickler
-
-Wie dieses Verzeichnis funktioniert und wie ein Plugin aufgenommen wird, steht in
-**[docs/](docs/)** — [wie der Index funktioniert](docs/wie-der-index-funktioniert.md) und
-[ein Plugin hinzufügen](docs/plugin-hinzufuegen.md).
+Best raised at the plugin itself — for Eorzea Arsenal you can even do it from inside the game, using
+the bug button in the title bar of every window.
