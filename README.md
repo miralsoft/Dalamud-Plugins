@@ -42,13 +42,13 @@ put your current gear side by side with your BiS. On top of that:
 → **[Go to the plugin: miralsoft/Dalamud-Eorzea-Arsenal](https://github.com/miralsoft/Dalamud-Eorzea-Arsenal)**
 · [Website](https://xivarsenal.app)
 
-### Fate Helper
+### Fate Compass
 
 **Lists the FATEs in your zone, ranks them by which one is actually worth doing, and tells you how
 to get there.**
 
 FATE farming is mostly bookkeeping: which of the six FATEs here is worth it, is that one already
-almost over, will it still be there once you arrive. Fate Helper answers that in one small window
+almost over, will it still be there once you arrive. Fate Compass answers that in one small window
 and takes the two-second chores off your hands:
 
 - **A ranked list** of every FATE in the zone — distance, remaining time, progress and how busy it
@@ -63,12 +63,12 @@ and takes the two-second chores off your hands:
   never loots, and it has no network access at all.
 - Bilingual English/German.
 
-→ **[Go to the plugin: miralsoft/Dalamud-Fate-Helper](https://github.com/miralsoft/Dalamud-Fate-Helper)**
+→ **[Go to the plugin: miralsoft/Dalamud-Fate-Compass](https://github.com/miralsoft/Dalamud-Fate-Compass)**
 
 ---
 
 ## Problems or requests?
 
 Best raised at the plugin itself. For Eorzea Arsenal you can even do it from inside the game, using
-the bug button in the title bar of every window; for Fate Helper, open an issue in
-[its repository](https://github.com/miralsoft/Dalamud-Fate-Helper/issues).
+the bug button in the title bar of every window; for Fate Compass, open an issue in
+[its repository](https://github.com/miralsoft/Dalamud-Fate-Compass/issues).
