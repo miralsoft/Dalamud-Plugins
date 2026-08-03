@@ -1,77 +1,59 @@
-# Dalamud-Plugins
+# Plugins von miralsoft für FFXIV
 
-The custom Dalamud repository for miralsoft's plugins. One address, all plugins.
+Alle meine Dalamud-Plugins über **eine** Adresse. Einmal eintragen, danach erscheinen hier auch alle
+künftigen Plugins von selbst.
+
+> *English: one Dalamud repository for all of my FFXIV plugins. Add the address below once — new
+> plugins show up automatically. Plugin descriptions inside the game are available in English too.*
+
+## Einrichten
 
 ```
 https://xivarsenal.app/plugin.json
 ```
 
-Paste that into Dalamud under `/xlsettings` → *Experimental* → *Custom Plugin Repositories*, press
-`+`, then *Save*. Every plugin listed here then appears in `/xlplugins`.
+1. Im Spiel `/xlsettings` öffnen → Reiter **Experimentell**.
+2. Unter *Custom Plugin Repositories* die Adresse oben einfügen.
+3. Auf **+** klicken, dann **Save**.
+4. `/xlplugins` öffnen und das gewünschte Plugin suchen.
+5. Installieren — fertig.
 
-## What this repository is
+> Dalamud ist ein Drittanbieter-Werkzeug und kein offizielles Square-Enix-Produkt. Die Nutzung
+> erfolgt freiwillig und auf eigene Verantwortung.
 
-It holds no plugin code and builds nothing. It is an **index**: [`pluginmaster.json`](pluginmaster.json)
-is a list of entries, each pointing at a release that already exists in that plugin's own repository.
-Publishing a plugin stays entirely a matter of that plugin's repository — releasing there is all it
-takes, and nothing is ever repackaged or re-released here.
+---
 
-`https://xivarsenal.app/plugin.json` serves this file. The address belongs to the domain rather than
-to any repository, so where the index lives can change later without anyone having to re-enter
-anything.
+## Die Plugins
 
-## Adding a plugin
+### Eorzea Arsenal
 
-Add one line to [`plugins.json`](plugins.json):
+**Verbindet dein Spiel mit deinem Eorzea-Arsenal-Konto und zeigt dir, was dir zu deinem BiS noch
+fehlt.**
 
-```json
-[
-  { "repo": "miralsoft/Dalamud-Eorzea-Arsenal" },
-  { "repo": "miralsoft/Your-New-Plugin" }
-]
-```
+Das Plugin liest deine Gearsets über alle Jobs hinweg und überträgt sie in dein Konto, damit die
+Webseite deine Ausrüstung gegen dein BiS stellen kann. Dazu:
 
-That is the whole job. The source repository needs no workflow, no extra file and no knowledge that
-this index exists — the index reads the plugin manifest out of the released zip. Pushing the change
-rebuilds the index immediately; otherwise it rebuilds hourly.
+- **Gear vs. BiS** — direkt im Spiel sehen, welche Teile noch fehlen, inklusive der Steine, Bücher
+  und Upgrade-Materialien, die dafür nötig sind.
+- **Kaufberater** — was du als Nächstes holen solltest, wo es herkommt und was es kostet.
+- **Wochenaufgaben** — Unreal, Wundersame Tasche und die wöchentlichen Läufe im Blick behalten.
+- **Teams** — Kalender, Mitigationspläne, Loot und Erinnerungen für deine Statik.
+- **Inventar** (freiwillig) — Materialien und Ausrüstung aus Taschen, Gehilfen und Satteltasche, damit
+  „habe ich schon" auch wirklich stimmt.
+- Zweisprachig Deutsch/Englisch. Alle Übertragungen sind ausdrücklich freiwillig.
 
-Two requirements on the plugin being added:
+→ **[Zum Plugin: miralsoft/Dalamud-Eorzea-Arsenal](https://github.com/miralsoft/Dalamud-Eorzea-Arsenal)**
+· [Webseite](https://xivarsenal.app)
 
-- **The repository must be public.** Dalamud downloads the zip without credentials, so a private
-  repository would give your users a 404.
-- **Its newest release must have the packaged zip attached** — what DalamudPackager produces, which
-  contains the plugin's manifest. `latest.zip` is picked up automatically.
+---
 
-Optional per entry:
+## Probleme oder Wünsche?
 
-| Field | Meaning |
-| --- | --- |
-| `asset` | The asset to use, when a release attaches more than one zip. |
-| `acceptsFeedback` | Whether Dalamud offers the feedback button. Defaults to `true`. |
+Melde dich am besten direkt beim jeweiligen Plugin — bei Eorzea Arsenal geht das sogar aus dem Spiel
+heraus über die Schaltfläche mit dem Käfer in der Titelleiste jedes Fensters.
 
-## How a release reaches your users
+## Für Entwickler
 
-1. You publish a release in the plugin's own repository, as usual.
-2. Within the hour the index reads that repository's **newest** release, takes the manifest out of
-   the zip and writes an entry pinned to that exact tag.
-3. `https://xivarsenal.app/plugin.json` serves the updated list; Dalamud offers the update.
-
-The download links deliberately point at a **specific tag**, never at `/releases/latest/`. "Latest"
-means the newest release in a repository as a whole — fine while a repository holds one plugin, and
-wrong the moment it does not.
-
-## When a plugin cannot be read
-
-A repository that cannot be reached **keeps its previous entry**. Failing to read something is not
-evidence that it is gone, and dropping an entry would remove the plugin from every user's list. The
-run is still marked failed so the cause gets looked at, but no plugin disappears because GitHub had a
-bad minute. If nothing at all can be resolved, the index is left untouched rather than overwritten
-with an empty list.
-
-## Running it by hand
-
-*Actions* → *Index* → *Run workflow*. Locally:
-
-```powershell
-./scripts/build-index.ps1
-```
+Wie dieses Verzeichnis funktioniert und wie ein Plugin aufgenommen wird, steht in
+**[docs/](docs/)** — [wie der Index funktioniert](docs/wie-der-index-funktioniert.md) und
+[ein Plugin hinzufügen](docs/plugin-hinzufuegen.md).
