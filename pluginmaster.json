@@ -51,9 +51,9 @@
     "CanUnloadAsync": false,
     "LoadPriority": 0,
     "Punchline": "Find, rank, and reach FATEs without the busywork.",
-    "DownloadLinkInstall": "https://github.com/miralsoft/Dalamud-Fate-Helper/releases/download/v1.0.0/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/miralsoft/Dalamud-Fate-Helper/releases/download/v1.0.0/latest.zip",
-    "DownloadLinkTesting": "https://github.com/miralsoft/Dalamud-Fate-Helper/releases/download/v1.0.0/latest.zip",
+    "DownloadLinkInstall": "https://github.com/miralsoft/Dalamud-Fate-Compass/releases/download/v1.0.0/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/miralsoft/Dalamud-Fate-Compass/releases/download/v1.0.0/latest.zip",
+    "DownloadLinkTesting": "https://github.com/miralsoft/Dalamud-Fate-Compass/releases/download/v1.0.0/latest.zip",
     "AcceptsFeedback": false
   }
 ]
