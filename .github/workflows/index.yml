@@ -1,0 +1,58 @@
+name: Index
+
+# Hourly, plus a button. The schedule is what makes publishing a plugin a one-step affair: you release
+# in the plugin's own repository as usual and this picks it up on its own. Use the button when you do
+# not want to wait, e.g. right after adding a plugin to plugins.json.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "plugins.json"
+      - "scripts/build-index.ps1"
+      - ".github/workflows/index.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    name: Rebuild pluginmaster.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build index
+        id: build
+        shell: pwsh
+        env:
+          # Only raises the API rate limit; the releases being read are public.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./scripts/build-index.ps1
+
+      - name: Commit if changed
+        run: |
+          git config user.name "Sanaka"
+          git config user.email "20637644+miralsoft@users.noreply.github.com"
+          git add pluginmaster.json
+          if git diff --cached --quiet; then
+            echo "No change."
+          else
+            git commit -m "chore(index): refresh pluginmaster.json"
+            git push
+          fi
+
+      # Committing first and failing afterwards is deliberate: a plugin that could not be refreshed
+      # keeps its previous entry, so the file is still correct and worth publishing. The red run is
+      # what says "someone go and look", without holding the other plugins hostage to it.
+      - name: Fail if a plugin did not refresh
+        if: steps.build.outputs.failed == 'true'
+        run: |
+          echo "At least one plugin could not be refreshed - see the build step's log."
+          exit 1
