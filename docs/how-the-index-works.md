@@ -16,10 +16,14 @@ releases of its own; what lives here are only references to files that **already
 ## The chain of addresses
 
 ```
-https://xivarsenal.app/plugin.json
+https://xivarsenal.app/plugins.json
         └── serves ────► raw.githubusercontent.com/miralsoft/Dalamud-Plugins/main/pluginmaster.json
                                 └── points ────► at the releases of the individual plugin repos
 ```
+
+`https://xivarsenal.app/plugin.json` (singular) serves the same file and **stays alive
+permanently**. It is the address the first users entered, and they will never hear that anything
+changed. The plural one is what gets documented from now on.
 
 The domain sits in front on purpose: the address belongs to us, not to GitHub. Should this repository
 ever be renamed, moved or replaced, only the target behind the domain changes — no user ever has to

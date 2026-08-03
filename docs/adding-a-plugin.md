@@ -80,20 +80,20 @@ failure while fetching explicitly does not do this.
 
 ## About the address
 
-Currently documented and entered by users:
+The documented address, the one to hand out from here on:
 
 ```
-https://xivarsenal.app/plugin.json
+https://xivarsenal.app/plugins.json
 ```
 
-The plan is to additionally offer `plugins.json` (plural) and to document that one in the future,
-because it describes several plugins better. **`plugin.json` stays permanently** — users have entered
-it, and switching off an old address would take the plugins out of their list. Only once the new
-route is demonstrably live does it become the documented address here and in the README.
+`https://xivarsenal.app/plugin.json` (singular) serves the very same file and **must stay alive
+permanently**. It is what the first users entered; switching it off would take the plugins out of
+their list, and they would never learn why. Never remove it, and do not bother documenting it either
+— it simply keeps working.
 
-"Demonstrably live" needs checking the response body, not just the status code: the website is a
-single-page app, so an unknown path answers **`200 OK` with the HTML shell**, which makes a plain
-`curl -sI` look like a success. Compare the content type instead:
+Should a third route ever be added, "live" needs checking the response body, not just the status
+code: the website is a single-page app, so an unknown path answers **`200 OK` with the HTML shell**,
+which makes a plain `curl -sI` look like a success. Compare the content type instead:
 
 ```bash
 curl -s -o /dev/null -w '%{http_code} %{content_type}\n' https://xivarsenal.app/plugins.json

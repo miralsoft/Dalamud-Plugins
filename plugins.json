@@ -1,5 +1,9 @@
 [
   {
     "repo": "miralsoft/Dalamud-Eorzea-Arsenal"
+  },
+  {
+    "repo": "miralsoft/Dalamud-Fate-Helper",
+    "acceptsFeedback": false
   }
 ]

@@ -6,7 +6,7 @@ shows up here on its own.
 ## Setup
 
 ```
-https://xivarsenal.app/plugin.json
+https://xivarsenal.app/plugins.json
 ```
 
 1. In game, open `/xlsettings` → the **Experimental** tab.
@@ -42,9 +42,33 @@ put your current gear side by side with your BiS. On top of that:
 → **[Go to the plugin: miralsoft/Dalamud-Eorzea-Arsenal](https://github.com/miralsoft/Dalamud-Eorzea-Arsenal)**
 · [Website](https://xivarsenal.app)
 
+### Fate Helper
+
+**Lists the FATEs in your zone, ranks them by which one is actually worth doing, and tells you how
+to get there.**
+
+FATE farming is mostly bookkeeping: which of the six FATEs here is worth it, is that one already
+almost over, will it still be there once you arrive. Fate Helper answers that in one small window
+and takes the two-second chores off your hands:
+
+- **A ranked list** of every FATE in the zone — distance, remaining time, progress and how busy it
+  is, weighted the way you want it. Rejected FATEs stay visible, greyed out with the reason.
+- **Route advice** — the closest aetheryte to each FATE and whether teleporting really beats
+  running, based on travel speeds measured while you play and remembered per zone.
+- **One-click flag** to drop the map marker on a FATE and hand it to your party.
+- **Ready up** — dismount, level sync and tank stance in one go, by hand or the moment you enter.
+- **Bozja, Zadnor and the Occult Crescent** — critical engagements and encounters in the same list,
+  with sign-up deadlines and how full they are.
+- **It assists, it does not play.** It never moves your character, never targets, never fights,
+  never loots, and it has no network access at all.
+- Bilingual English/German.
+
+→ **[Go to the plugin: miralsoft/Dalamud-Fate-Helper](https://github.com/miralsoft/Dalamud-Fate-Helper)**
+
 ---
 
 ## Problems or requests?
 
-Best raised at the plugin itself — for Eorzea Arsenal you can even do it from inside the game, using
-the bug button in the title bar of every window.
+Best raised at the plugin itself. For Eorzea Arsenal you can even do it from inside the game, using
+the bug button in the title bar of every window; for Fate Helper, open an issue in
+[its repository](https://github.com/miralsoft/Dalamud-Fate-Helper/issues).
