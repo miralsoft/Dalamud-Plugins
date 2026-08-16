@@ -65,6 +65,29 @@ and takes the two-second chores off your hands:
 
 → **[Go to the plugin: miralsoft/Dalamud-Fate-Compass](https://github.com/miralsoft/Dalamud-Fate-Compass)**
 
+### Gearbook
+
+**Every gearset you own, sorted and filtered the way you actually think about them, and one click
+away.**
+
+The game gives you one long list and asks you to spend a hotbar slot per set. Gearbook gives you the
+sets themselves — on a bar you can leave on screen, and in a window you can genuinely search:
+
+- **A bar of job icons** you can leave up, lock in place and click to switch, instead of spending
+  hotbar slots on gearsets.
+- **A switcher on the front of the bar** — your favourites, one role, one category, or one of your
+  own tags.
+- **A library window** with search across names, jobs, tags and your own notes, plus filters, saved
+  views and bulk editing.
+- **Several sets for the same job** — the case the game handles worst. Rename, reorder or delete
+  them and your tags and notes stay on the right ones.
+- **Tidying up on request** — it can put the game's own gearset list into the order Gearbook shows,
+  and keeps the previous order so you can put it back.
+- Bilingual English/German.
+- **Nothing happens on its own.** It switches a gearset when you click or type, and not otherwise.
+
+→ **[Go to the plugin: miralsoft/Dalamud-Gearbook](https://github.com/miralsoft/Dalamud-Gearbook)**
+
 ---
 
 ## Problems or requests?

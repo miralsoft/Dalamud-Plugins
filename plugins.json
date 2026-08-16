@@ -5,5 +5,8 @@
   {
     "repo": "miralsoft/Dalamud-Fate-Compass",
     "acceptsFeedback": false
+  },
+  {
+    "repo": "miralsoft/Dalamud-Gearbook"
   }
 ]
