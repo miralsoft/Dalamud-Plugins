@@ -56,5 +56,40 @@
     "DownloadLinkUpdate": "https://github.com/miralsoft/Dalamud-Fate-Compass/releases/download/v1.1.0/latest.zip",
     "DownloadLinkTesting": "https://github.com/miralsoft/Dalamud-Fate-Compass/releases/download/v1.1.0/latest.zip",
     "AcceptsFeedback": false
+  },
+  {
+    "Author": "Sanaka",
+    "Name": "Gearbook",
+    "InternalName": "Gearbook",
+    "AssemblyVersion": "1.0.0.0",
+    "Description": "The game lists your gearsets by name and nothing else. Gearbook adds what that list is missing: a search, filters by role and category, favourites, your own tags and notes, and a compact bar of job icons you can leave on screen and click to switch. A switcher on the front of the bar swaps it between your favourites, one role, one category or one of your own tags without opening a window.\n\nIt is built for the case the game handles worst, several sets for the same job, so a dark knight for one fight, another for a different one, and a third for a glamour are three separate entries rather than one guess. Rename them, reorder them, delete one, and your tags and notes stay on the right sets.\n\nIt can also tidy the game's own gearset list into the order Gearbook shows, which is the one thing it changes rather than reads. That runs only when you press the button, keeps the order it found so you can put it back, and stops at the first move that does not land where it was aimed.\n\nOtherwise nothing happens on its own. Gearbook switches a gearset only when you click or type, and there is no automation, no queueing and no acting on your behalf while you are away. It needs no account, no server and no internet connection. Nothing leaves your machine.",
+    "ApplicableVersion": "any",
+    "RepoUrl": "https://github.com/miralsoft/Dalamud-Gearbook",
+    "Tags": [
+      "gearset",
+      "gearsets",
+      "gear set",
+      "job",
+      "class",
+      "switch",
+      "loadout",
+      "glamour",
+      "favourites",
+      "filter"
+    ],
+    "CategoryTags": [
+      "utility"
+    ],
+    "DalamudApiLevel": 15,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "IconUrl": "https://raw.githubusercontent.com/miralsoft/Dalamud-Gearbook/main/src/Gearbook/images/icon.png",
+    "Punchline": "Every gearset, sorted, filtered, one click to switch.",
+    "DownloadLinkInstall": "https://github.com/miralsoft/Dalamud-Gearbook/releases/download/v1.0.0/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/miralsoft/Dalamud-Gearbook/releases/download/v1.0.0/latest.zip",
+    "DownloadLinkTesting": "https://github.com/miralsoft/Dalamud-Gearbook/releases/download/v1.0.0/latest.zip",
+    "AcceptsFeedback": true
   }
 ]
