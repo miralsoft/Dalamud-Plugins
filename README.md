@@ -9,11 +9,11 @@ shows up here on its own.
 https://xivarsenal.app/plugins.json
 ```
 
-1. In game, open `/xlsettings` → the **Experimental** tab.
+1. In game, open `/xlsettings` and go to the **Experimental** tab.
 2. Under *Custom Plugin Repositories*, paste the address above.
 3. Click **+**, then **Save**.
 4. Open `/xlplugins` and search for the plugin you want.
-5. Install it — that's it.
+5. Install it. That is all.
 
 > Dalamud is a third-party tool and not an official Square Enix product. Using it is entirely your
 > own choice and your own responsibility.
@@ -30,12 +30,12 @@ your BiS.**
 The plugin reads your gearsets across every job and sends them to your account, so the website can
 put your current gear side by side with your BiS. On top of that:
 
-- **Gear vs. BiS** — see right in the game which pieces are still missing, including the tomestones,
+- **Gear vs. BiS:** see right in the game which pieces are still missing, including the tomestones,
   books and upgrade materials they take.
-- **Shopping guide** — what to pick up next, where it comes from and what it costs.
-- **Weekly tasks** — keep Unreal, Wondrous Tails and your weekly runs in view.
-- **Teams** — calendar, mitigation plans, loot and reminders for your static.
-- **Inventory** (optional) — materials and gear from your bags, retainers and saddlebag, so that
+- **Shopping guide:** what to pick up next, where it comes from and what it costs.
+- **Weekly tasks:** keep Unreal, Wondrous Tails and your weekly runs in view.
+- **Teams:** calendar, mitigation plans, loot and reminders for your static.
+- **Inventory** (optional): materials and gear from your bags, retainers and saddlebag, so that
   "I already have that one" is actually true.
 - Bilingual English/German. Every upload is strictly opt-in.
 
@@ -51,13 +51,13 @@ FATE farming is mostly bookkeeping: which of the six FATEs here is worth it, is 
 almost over, will it still be there once you arrive. Fate Compass answers that in one small window
 and takes the two-second chores off your hands:
 
-- **A ranked list** of every FATE in the zone — distance, remaining time, progress and how busy it
+- **A ranked list** of every FATE in the zone, by distance, remaining time, progress and how busy it
   is, weighted the way you want it. Rejected FATEs stay visible, greyed out with the reason.
-- **Route advice** — the closest aetheryte to each FATE and whether teleporting really beats
-  running, based on travel speeds measured while you play and remembered per zone.
+- **Route advice:** the closest aetheryte to each FATE and whether teleporting really beats running,
+  based on travel speeds measured while you play and remembered per zone.
 - **One-click flag** to drop the map marker on a FATE and hand it to your party.
-- **Ready up** — dismount, level sync and tank stance in one go, by hand or the moment you enter.
-- **Bozja, Zadnor and the Occult Crescent** — critical engagements and encounters in the same list,
+- **Ready up:** dismount, level sync and tank stance in one go, by hand or the moment you enter.
+- **Bozja, Zadnor and the Occult Crescent:** critical engagements and encounters in the same list,
   with sign-up deadlines and how full they are.
 - **It assists, it does not play.** It never moves your character, never targets, never fights,
   never loots, and it has no network access at all.
@@ -71,17 +71,17 @@ and takes the two-second chores off your hands:
 away.**
 
 The game gives you one long list and asks you to spend a hotbar slot per set. Gearbook gives you the
-sets themselves — on a bar you can leave on screen, and in a window you can genuinely search:
+sets themselves, on a bar you can leave on screen and in a window you can genuinely search:
 
 - **A bar of job icons** you can leave up, lock in place and click to switch, instead of spending
   hotbar slots on gearsets.
-- **A switcher on the front of the bar** — your favourites, one role, one category, or one of your
+- **A switcher on the front of the bar:** your favourites, one role, one category, or one of your
   own tags.
 - **A library window** with search across names, jobs, tags and your own notes, plus filters, saved
   views and bulk editing.
-- **Several sets for the same job** — the case the game handles worst. Rename, reorder or delete
+- **Several sets for the same job,** the case the game handles worst. Rename, reorder or delete
   them and your tags and notes stay on the right ones.
-- **Tidying up on request** — it can put the game's own gearset list into the order Gearbook shows,
+- **Tidying up on request:** it can put the game's own gearset list into the order Gearbook shows,
   and keeps the previous order so you can put it back.
 - Bilingual English/German.
 - **Nothing happens on its own.** It switches a gearset when you click or type, and not otherwise.
@@ -93,5 +93,6 @@ sets themselves — on a bar you can leave on screen, and in a window you can ge
 ## Problems or requests?
 
 Best raised at the plugin itself. For Eorzea Arsenal you can even do it from inside the game, using
-the bug button in the title bar of every window; for Fate Compass, open an issue in
-[its repository](https://github.com/miralsoft/Dalamud-Fate-Compass/issues).
+the bug button in the title bar of every window. For Fate Compass, open an issue in
+[its repository](https://github.com/miralsoft/Dalamud-Fate-Compass/issues), and for Gearbook in
+[its own](https://github.com/miralsoft/Dalamud-Gearbook/issues).

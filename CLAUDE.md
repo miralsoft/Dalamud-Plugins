@@ -1,88 +1,91 @@
-# Working on this repository
+# FFXIV Plugin Index
 
-This is a Dalamud plugin **index** — a directory pointing at the releases of the individual plugin
-repositories. It holds no plugin code, builds nothing and publishes no releases of its own. All
-plugins are meant to be installable from **one single address**, so that users never have to add a
-new source per plugin.
+<!--
+Copied from: miralsoft-foundation-docs, entrypoints/for-project-repos/CLAUDE.md
+Foundation version: 3.1.0
+Copied on: 2026-08-17
+(M-19. Re-copy this file when the declared foundation version in docs/project.md is raised.)
+-->
 
-Read these before changing anything:
+You are working on the `FFXIV Plugin Index`, the aggregate Dalamud plugin index that lists every
+FFXIV plugin of miralsoft and builds the list players subscribe to. This file is a signpost, not a
+rulebook. The rules are not in this repository; they are in the MIRAL Soft foundation, and they are
+read from there rather than copied here.
 
-| File | What it covers |
-| --- | --- |
-| `docs/how-the-index-works.md` | Structure, the chain of addresses, the rules that must not be broken, testing |
-| `docs/adding-a-plugin.md` | The step-by-step guide, including prerequisites and failure modes |
-| `plugins.json` | The only hand-maintained file |
+## The foundation
 
-`README.md` is the **user-facing page**: what is here, what it does, how to get it — in that order.
-It says nothing about how the directory works internally; that belongs in `docs/`.
+This project is **external** in the sense of M-12: its documentation lives here in `docs/`, and
+nothing is ever written back to the foundation. The foundation is read-only for this repository.
 
-## Conventions
+Clone it once, next to nothing else, and pull it at the start of every working session:
 
-- **Talk to the operator in German. Everything written into this repository is English**, file names
-  included. The README is read by players, most of whom read English.
-- **Conventional commits** (`feat:`, `fix:`, `docs:`, `chore:`).
-- Git identity: `Sanaka <20637644+miralsoft@users.noreply.github.com>`.
-- **Never name an AI as an author or co-author.** No `Co-Authored-By` lines, no "generated with"
-  footers — not in commits, not in pull requests, not in files. This is an explicit rule of the
-  operator's.
-- `main` is the only branch; small changes may go there directly.
-
-## Three things not to do
-
-The full list is in `docs/how-the-index-works.md`. These three tend to get broken with the best of
-intentions:
-
-1. **Editing `pluginmaster.json` by hand.** It is generated. A hand edit is gone on the next run — or
-   stays and is wrong.
-2. **"Cleaning up" the error handling in the build script.** A repository that cannot be reached
-   keeps its previous entry on purpose. Being unable to read something is not evidence that it is
-   gone, and dropping the entry would remove the plugin from *every* user's list over one bad minute
-   at GitHub.
-3. **Changing or retiring a public address.** Users entered it and will never hear that it changed.
-
-## After a change to plugins.json
-
-Pushing to `main` starts the *Index* workflow. Before reporting anything as done:
-
-1. The run under *Actions* → *Index* is **green**.
-2. `pluginmaster.json` carries the entry with `InternalName`, `AssemblyVersion`, `DalamudApiLevel`
-   and a download link containing a **tag**, not `latest`.
-3. `https://xivarsenal.app/plugins.json` actually serves it. Check the **content type**, not the
-   status code — see below. The site caches for ten minutes, so allow for that.
-
-A green run alone proves little: the script resolves whatever the release contains. If a plugin was
-renamed but its newest release is still the build from before the rename, the run succeeds and
-writes the old `InternalName`. Read the resolved name in the log, not just the colour.
-
-Testing locally first is cheap and catches this:
-
-```powershell
-./scripts/build-index.ps1 -Output "pluginmaster.test.json"
+```sh
+git clone https://github.com/MIRAL-Soft/miralsoft-foundation-docs.git .foundation-docs
+cd .foundation-docs && git pull
 ```
 
-Build into a *test* file so the real index stays untouched, check what it produced, then delete it.
+Keep the clone out of this repository through the clone's own exclude file, not through
+`.gitignore`:
 
-## Two traps that have already sprung
-
-**The website is a single-page app.** It answers unknown paths with `200 OK` and the HTML shell, so a
-plain `curl -sI` reports success for a route that does not exist. Compare the content type instead —
-`application/json` means it is there, `text/html` means it is not:
-
-```bash
-curl -s -o /dev/null -w '%{http_code} %{content_type}\n' https://xivarsenal.app/plugins.json
+```sh
+echo '.foundation-docs/' >> .git/info/exclude
 ```
 
-**Windows PowerShell 5.1 fuses JSON arrays.** `@( ConvertFrom-Json … )` wrapped directly collects
-*pipeline output*, and 5.1 passes an array through as one object — a loop over three plugins then
-runs once with all three merged. Always assign first, then wrap: `$p = ConvertFrom-Json …; @($p)`.
-This applies to throwaway verification commands just as much as to the script.
+`.git/info/exclude` rather than `.gitignore` on purpose: the exclude file is never committed, so
+the arrangement stays a local convenience and does not become a line in a repository that has
+nothing to do with it.
 
-## This environment
+## Read in this order, before doing anything
 
-The GitHub CLI is **not** authenticated here; `git push` works through the Windows credential
-manager. The workflow therefore cannot be dispatched from here — to rebuild the index without
-waiting for the hourly run (`:17`), ask the operator to press *Run workflow* under *Actions* →
-*Index*.
+From `.foundation-docs/`:
 
-The public route itself lives on the website and is maintained by a different agent in a separate
-project. It is not part of this repository.
+1. `rules/_meta.md`, the constitution.
+2. Every file in `rules/`. They are short.
+3. The profiles this project declares in its `docs/project.md`: `rules/frameworks/dalamud.md`. Its
+   section "Building and shipping a plugin" is the one that describes this repository's role in the
+   chain, so it is not the optional one. This project declares no language profile, and
+   `docs/open-points.md` says why.
+4. `blueprints/dalamud-plugin.md`. It describes the plugin repositories rather than this one, but
+   its section 14 states what they build so that this index works, which is the other half of the
+   contract this repository has to hold up.
+
+Then from this repository, in `docs/`:
+
+5. The project memory first: `status.md`, `decisions.md`, `todos.md`, `open-points.md`. This is how
+   the previous session hands over, and it is the only handover there is (M-08, I-07).
+6. `project.md`, `architecture.md`, `rules-project.md`.
+
+The two working documents, `how-the-index-works.md` and `adding-a-plugin.md`, come after those.
+
+## Enforcement
+
+Install the hooks from the foundation into this clone. They are not part of any repository, so a
+fresh clone needs them again:
+
+```sh
+cp .foundation-docs/enforcement/hooks/commit-msg .git/hooks/commit-msg
+cp .foundation-docs/enforcement/hooks/pre-commit .git/hooks/pre-commit
+chmod +x .git/hooks/commit-msg .git/hooks/pre-commit
+```
+
+`.miralsoft-enforcement` at this repository's root configures them: the committer identity this
+project uses (R-03, R-19) and the file patterns checked for em-dashes (I-02). Every check the hooks
+perform also runs in CI (R-17), because a hook lives in a clone and gets forgotten.
+
+`./scripts/check.ps1` runs the same gates in one command (R-18).
+
+If a hook blocks a commit, fix the cause. Do not bypass it (R-08).
+
+## While working
+
+- Global rules are binding and read-only. This project may tighten them in `docs/rules-project.md`,
+  never weaken or contradict them (M-01, M-04).
+- This project is bound by the foundation version it declares in `docs/project.md` (M-17). A rule
+  added to the foundation later does not bind it until that declaration is raised. Review the
+  declaration whenever a release is cut: read the foundation changelog from the declared version
+  onward, then either raise it and do the work, or leave it and record why.
+- Update `docs/status.md` at the end of every working session, and append to `docs/decisions.md`
+  when something is decided, including the paths that were rejected and why (M-08, M-15).
+- An AI is never named as author or co-author, anywhere (R-09, I-06).
+
+No rules are duplicated here. Follow the documents above.

@@ -4,7 +4,7 @@
 .DESCRIPTION
   For every configured repository this reads its **newest published release**, takes the plugin
   manifest out of the released zip, and pins the download links to exactly that release. Nothing is
-  built, repackaged or re-released here — the index only points at artefacts that already exist.
+  built, repackaged or re-released here: the index only points at artefacts that already exist.
 
   Reading the manifest out of the zip is what makes adding a plugin a one-line change: the source
   repository needs no workflow, no extra asset and no knowledge that this index exists. Any Dalamud
@@ -40,7 +40,7 @@ if (-not [string]::IsNullOrWhiteSpace($Token)) {
 
 # ---------------------------------------------------------------------------------------------
 # The previous index, keyed by the repository its entry was built from. The key is taken from the
-# download link because this script is what wrote it — the manifest's own RepoUrl is authored by the
+# download link because this script is what wrote it. The manifest's own RepoUrl is authored by the
 # plugin and may point somewhere else entirely.
 # ---------------------------------------------------------------------------------------------
 function Get-RepoFromLink {
