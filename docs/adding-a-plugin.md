@@ -34,6 +34,11 @@ Optional per entry:
 | `asset` | Which attachment to use, in case a release has several zips. |
 | `acceptsFeedback` | Whether Dalamud offers the feedback button. Defaults to `true`. |
 
+Watch out for `acceptsFeedback`: the index writes that field into every entry, overwriting whatever
+the plugin's own manifest says, and without the field it writes `true`. So a plugin that opts out in
+its manifest has that opt-out silently undone unless the opt-out is repeated here. Check the
+manifest's `AcceptsFeedback` before listing a plugin and match it.
+
 ## Step 2 — introduce it
 
 In the [README](../README.md), add a section following the pattern of the existing one: a heading
